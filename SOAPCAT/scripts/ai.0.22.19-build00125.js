@@ -2136,7 +2136,7 @@ var Microsoft;
                             value = ApplicationInsights.Util.trim(value);
                             if (value.toString().length > DataSanitizer.MAX_STRING_LENGTH) {
                                 value = value.toString().substring(0, DataSanitizer.MAX_STRING_LENGTH);
-                                ApplicationInsights._InternalLogging.throwInternalUserActionable(ApplicationInsights.LoggingSeverity.WARNING, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.USRACT_StringValueTooLong, "string value is too long. It has been truncated to " + DataSanitizer.MAX_STRING_LENGTH + " characters.", { value: value }));
+                                ApplicationInsights._InternalLogging.throwInternalUserActionable(ApplicationInsights.LoggingSeverity.WARNING, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.USRACT_StringValueTooLong, "string c is too long. It has been truncated to " + DataSanitizer.MAX_STRING_LENGTH + " characters.", { value: value }));
                             }
                         }
                         return value;

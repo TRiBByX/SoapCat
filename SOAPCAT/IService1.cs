@@ -14,34 +14,29 @@ namespace SOAPCAT
     {
 
         [OperationContract]
-        string GetData(int value);
+        Cat GetCat(Cat c);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
-
-        // TODO: Add your service operations here
+        List<Cat> GetAllCats();
     }
 
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
     [DataContract]
-    public class CompositeType
+    public class Cat
     {
-        bool boolValue = true;
-        string stringValue = "Hello ";
+        private string _uniqeIdentifier;
 
         [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
+        public string Name { get; set; }
+        [DataMember]
+        public int Age { get; set; }
 
         [DataMember]
-        public string StringValue
+        public string UniqeIdentifier
         {
-            get { return stringValue; }
-            set { stringValue = value; }
+            get { return _uniqeIdentifier; }
+            set { _uniqeIdentifier = value; }
         }
     }
 }
