@@ -9,10 +9,9 @@ namespace SOAPCAT
 {
     public class DBHelper
     {
-        private static string _connectionString = @"Data Source=students-server.database.windows.net;Initial Catalog=""Cat's"";Integrated Security=False;User ID=chri56a4;Password=K03g3bugt;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
+        private static string _connectionString = "Data Source=students-server.database.windows.net;Initial Catalog=\"Cat\'s\";Integrated Security=False;User ID=chri56a4;Password=********;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         /// <summary>
-        /// Get all cat's in database
+        /// Get all cat's in the database
         /// </summary>
         /// <returns></returns>
         public static List<Cat> GetAllCats()
@@ -108,7 +107,7 @@ namespace SOAPCAT
         /// <returns></returns>
         public static Cat GetCat(Cat c)
         {
-            string queryString = $"SELECT * FROM [Table] WHERE cpr = '{c.UniqueIdentifier}'";
+            string queryString = $"SELECT * FROM [Table] WHERE UniqueIdentifier = '{c.UniqueIdentifier}'";
             var returnCat = new Cat();
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
